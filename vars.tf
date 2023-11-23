@@ -9,3 +9,5 @@ variable "workstation_node_cidr" {}
 variable "prometheus_cidr" {}
 variable "kms_key_id" {}
 variable "instance_count" {}
+variable "alb_dns_name" {}
+variable "zone_id" {}
