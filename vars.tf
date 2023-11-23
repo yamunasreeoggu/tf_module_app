@@ -11,3 +11,5 @@ variable "kms_key_id" {}
 variable "instance_count" {}
 variable "alb_dns_name" {}
 variable "zone_id" {}
+variable "listener_arn" {}
+variable "listener_rule_priority" {}

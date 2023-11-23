@@ -170,3 +170,19 @@ resource "aws_route53_record" "record" {
   ttl     = 30
   records = [var.alb_dns_name]
 }
+
+resource "aws_lb_listener_rule" "rule" {
+  listener_arn = var.listener_arn
+  priority     = var.listener_rule_priority
+
+  action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.tg.arn
+  }
+
+  condition {
+    host_header {
+      values = ["${var.component}-${var.env}.yamunadevops.online"]
+    }
+  }
+}
